@@ -49,8 +49,8 @@ const paginate =
     <AppContainer>
     <h1 className="Header">React Wars</h1>
     <AppStyles>
-    {character.map(element => {
-      return <StarCard character={currentCharacters} key={element.name} element={element}/>
+    {currentCharacters.map(element => {
+      return <StarCard key={element.name} element={element}/>
     })}
       </AppStyles>
       <Pages charactersPerPage={charactersPerPage} totalCharacters={character.length} paginate={paginate}/>
