@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const AppStyles = styled.div`
 display: flex;
-flex-direction: column;
-justify-content: space-between;
+flex-direction: row;
+justify-content: space-evenly;
 background: rgba(245,245,245,0.5);
 margin: 3rem auto;
 height: 100%;
