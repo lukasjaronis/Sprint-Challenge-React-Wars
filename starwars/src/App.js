@@ -14,10 +14,11 @@ const App = () => {
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-
+  const [loading, setLoading] = useState(false);
   const [character, setCharacter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const  [charactersPerPage] = useState(3);
+
 
   const AppContainer = styled.div`
   
@@ -29,12 +30,17 @@ const App = () => {
   `;
 
 useEffect(() => {
-  axios
-  .get(`https://swapi.co/api/people/`)
-  .then(responseData => {
-    setCharacter(responseData.data.results);
-    console.log(responseData.data.results);
-  })
+  const fetchCharacters = async () => {
+    setLoading(true);
+    await axios 
+    .get(`https://swapi.co/api/people/`)
+    .then(responseData => {
+      setCharacter(responseData.data.results);
+      setLoading(false);
+      console.log(responseData.data.results);
+    })
+  }
+  fetchCharacters();
 }, [] )
 
 
@@ -50,7 +56,7 @@ const paginate =
     <h1 className="Header">React Wars</h1>
     <AppStyles>
     {currentCharacters.map(element => {
-      return <StarCard key={element.name} element={element}/>
+      return <StarCard key={element.name} element={element} loading={loading}/>
     })}
       </AppStyles>
       <Pages charactersPerPage={charactersPerPage} totalCharacters={character.length} paginate={paginate}/>

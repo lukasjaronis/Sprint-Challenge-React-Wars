@@ -7,8 +7,8 @@ justify-content: space-evenly;
 background: rgba(245,245,245,0.5);
 margin: 3rem auto;
 height: 100%;
-width: 90%;
 border-radius: 15px;
+flex-grow: grow;
 
 .Header {
      display: flex;
@@ -35,18 +35,11 @@ h2 {
      margin-top: 50px;
 }
 
-.properties {
-     display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-
-     span {
-          margin: 3px;
-     }
-
+h3 {
+     margin: 1rem;
+     color: rgba(255,69,0,0.5);
 }
+
 
 }
 `;
