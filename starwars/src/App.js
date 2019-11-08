@@ -4,6 +4,8 @@ import StarCard from "./components/StarCard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppStyles } from "./components/styles";
 import styled from "styled-components";
+import Pages from "./components/Pagination";
+
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -47,11 +49,11 @@ const paginate =
     <AppContainer>
     <h1 className="Header">React Wars</h1>
     <AppStyles>
-    {character.map(el => {
-    return <StarCard charperpage={charactersPerPage} totalCharacters={character.length} paginate={paginate} el={el} key={el.name} />
+    {character.map(element => {
+      return <StarCard character={currentCharacters} key={element.name} element={element}/>
     })}
-    
       </AppStyles>
+      <Pages charactersPerPage={charactersPerPage} totalCharacters={character.length} paginate={paginate}/>
       </AppContainer>
   );
 }
