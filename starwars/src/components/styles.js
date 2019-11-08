@@ -25,7 +25,7 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 width: 400px;
-height: 500px;
+height: 400px;
 background: rgba(245,245,245,0.6);
 border: 1px solid black;
 border-radius: 15px;
@@ -40,7 +40,7 @@ h2 {
 flex-direction: column;
 justify-content: center;
 align-items: center;
-     margin: 2rem;
+
 
      span {
           margin: 3px;
