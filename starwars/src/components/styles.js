@@ -14,3 +14,34 @@ border-radius: 15px;
      background: red;
 }
 `;
+
+export const CardStyle = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 400px;
+height: 400px;
+background: rgba(245,245,245,0.6);
+border: 1px solid black;
+border-radius: 15px;
+
+h2 {
+     margin-top: 50px;
+}
+
+.properties {
+     display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+     margin: 2rem;
+
+     span {
+          margin: 3px;
+     }
+
+}
+
+}
+`;
