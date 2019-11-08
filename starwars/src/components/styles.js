@@ -32,6 +32,7 @@ border-radius: 15px;
 margin: 2rem;
 
 h2 {
+     font-weight: 900;
      margin-top: 50px;
 }
 
