@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AppStyles } from "./components/styles";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -11,9 +11,9 @@ const App = () => {
   // sync up with, if any.
 
   return (
-    <div className="App">
+    <AppStyles>
       <h1 className="Header">React Wars</h1>
-    </div>
+      </AppStyles>
   );
 }
 
