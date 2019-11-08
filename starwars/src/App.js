@@ -14,8 +14,8 @@ const App = () => {
   // sync up with, if any.
 
   const [character, setCharacter] = useState([]);
-
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const  [charactersPerPage] = useState(3);
 
   const AppContainer = styled.div`
   
@@ -31,16 +31,24 @@ useEffect(() => {
   .get(`https://swapi.co/api/people/`)
   .then(responseData => {
     setCharacter(responseData.data.results);
-    console.log(responseData.data.results)
+    console.log(responseData.data.results);
   })
 }, [] )
+
+
+const indexLastPerson = currentPage * charactersPerPage; // which pretty much = to 3 (1 * 3)
+const indexFirstPerson = indexLastPerson - charactersPerPage; // again, = 3
+const currentCharacters = character.slice(indexFirstPerson, indexLastPerson); // which means we're slicing the array 1 through 3.
+
+const paginate = 
+(pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <AppContainer>
     <h1 className="Header">React Wars</h1>
     <AppStyles>
     {character.map(el => {
-    return <StarCard el={el} key={el.name} />
+    return <StarCard charperpage={charactersPerPage} totalCharacters={character.length} paginate={paginate} el={el} key={el.name} />
     })}
     
       </AppStyles>
